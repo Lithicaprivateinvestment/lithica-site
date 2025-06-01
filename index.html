@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>LITHICA – Private Lithium Investment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #142437;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+    }
+
+    .section h2 {
+      color: #142437;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .about, .benefits {
+      text-align: center;
+    }
+
+    .about p, .benefits ul {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 16px;
+    }
+
+    .benefits ul {
+      list-style-type: disc;
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    .pools {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .pool {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 320px;
+      text-align: center;
+    }
+
+    .pool h3 {
+      color: #142437;
+      margin-bottom: 10px;
+    }
+
+    .pool p {
+      font-size: 15px;
+      margin: 6px 0;
+    }
+
+    .invest-button {
+      margin-top: 10px;
+      background: #142437;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .calculator-box {
+      max-width: 400px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .calculator-box input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    footer {
+      background: #142437;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>LITHICA</h1>
+  <p>Exclusive Lithium Mining Investment Opportunities in Africa</p>
+</header>
+
+<div class="container">
+
+  <div class="section about">
+    <h2>About LITHICA</h2>
+    <p>
+      LITHICA is a private investment company focused on unlocking high-value opportunities in Africa's booming lithium sector. 
+      We are not open to the public — only those who receive a personal invitation from an insider can join our network. 
+      This exclusivity ensures security, trust, and high-return performance for our partners.
+    </p>
+  </div>
+
+  <div class="section pools">
+    <div class="pool">
+      <h3>Starter Pool</h3>
+      <p><strong>$5,000 – $20,000</strong></p>
+      <p>2.5% Daily Compounding for 3 Months (90 days)</p>
+      <p>Ideal for entry-level investors seeking rapid short-term growth</p>
+      <a class="invest-button" href="invest.html">Invest Now</a>
+    </div>
+
+    <div class="pool">
+      <h3>Growth Pool</h3>
+      <p><strong>$25,000 – $50,000</strong></p>
+      <p>2% Daily Compounding for 6 Months (180 days)</p>
+      <p>Best for committed investors aiming for significant long-term returns</p>
+      <a class="invest-button" href="invest.html">Invest Now</a>
+    </div>
+  </div>
+
+  <div class="section calculator">
+    <h2>ROI Calculator – Daily Compounding</h2>
+    <p style="max-width: 600px; margin: 0 auto 20px;">
+      Enter your investment details below. This calculator assumes <strong>100% reinvestment</strong> — 
+      meaning daily profits are rolled over, and nothing is withdrawn or added.
+    </p>
+    <div class="calculator-box">
+      <label>Initial Investment ($):</label><br>
+      <input type="number" id="principal" placeholder="e.g. 10000"><br>
+      <label>Daily Interest Rate (%):</label><br>
+      <input type="number" id="rate" placeholder="e.g. 2.5" step="0.01"><br>
+      <label>Duration (in days):</label><br>
+      <input type="number" id="days" placeholder="e.g. 90"><br>
+      <button onclick="calculateROI()" class="invest-button">Calculate</button>
+      <p id="result" style="margin-top:15px; font-weight:bold;"></p>
+    </div>
+  </div>
+
+  <div class="section benefits">
+    <h2>Why Invest in Lithium Mining?</h2>
+    <ul>
+      <li>Rising global demand driven by electric vehicles and battery technology</li>
+      <li>Africa holds untapped, high-quality lithium reserves</li>
+      <li>First-mover advantage in a rapidly growing market</li>
+      <li>Daily compounding returns with flexible pool options</li>
+      <li>Backed by private capital and strategic partnerships</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  &copy; 2025 LITHICA. Private Investment Access Only. All rights reserved.
+</footer>
+
+<script>
+  function calculateROI() {
+    const principal = parseFloat(document.getElementById('principal').value);
+    const rate = parseFloat(document.getElementById('rate').value);
+    const days = parseInt(document.getElementById('days').value);
+
+    if (isNaN(principal) || isNaN(rate) || isNaN(days)) {
+      document.getElementById('result').innerText = '⚠️ Please fill in all fields correctly.';
+      return;
+    }
+
+    const dailyRate = rate / 100;
+    const finalAmount = principal * Math.pow(1 + dailyRate, days);
+    const earnings = finalAmount - principal;
+
+    document.getElementById('result').innerHTML =
+      `📈 <strong>After ${days} days:</strong><br>
+       Final Amount: <strong>$${finalAmount.toFixed(2)}</strong><br>
+       Total Profit: <strong>$${earnings.toFixed(2)}</strong>`;
+  }
+</script>
+
+</body>
+</html>
