@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Invest with LITHICA</title>
@@ -12,62 +12,52 @@
     }
 
     header {
-      background: #142437;
+      background-color: #142437;
       color: white;
       text-align: center;
-      padding: 40px 20px;
+      padding: 30px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
     }
 
     .container {
       max-width: 800px;
       margin: auto;
       padding: 40px 20px;
-    }
-
-    h1, h2 {
-      color: #142437;
-      text-align: center;
-    }
-
-    p {
-      font-size: 18px;
       text-align: center;
     }
 
     .wallet {
-      background-color: #f4f4f4;
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
       font-weight: bold;
-      font-size: 16px;
-      margin: 30px auto;
-      max-width: 600px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      font-size: 18px;
+      color: #333;
+      margin: 20px 0;
+      word-break: break-word;
     }
 
-    form {
-      background: #f4f4f4;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    .notice {
+      font-size: 18px;
+      margin: 20px 0;
+      color: #444;
+    }
+
+    .google-form-button {
+      display: inline-block;
       margin-top: 30px;
-    }
-
-    input, button {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-    }
-
-    button {
       background-color: #142437;
       color: white;
-      border: none;
-      cursor: pointer;
+      text-decoration: none;
+      padding: 14px 24px;
+      font-size: 16px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .google-form-button:hover {
+      background-color: #1e3552;
     }
 
     footer {
@@ -83,39 +73,33 @@
 
 <header>
   <h1>LITHICA</h1>
-  <p>Secure Your Exclusive Lithium Investment</p>
-  <p>🎯 A personal investor dashboard will be created after your investment is received.</p>
+  <p>Secure Private Investment in Africa’s Lithium Sector</p>
 </header>
 
 <div class="container">
-  <h2>Bitcoin Payment Information</h2>
-  <div class="wallet">
-    BTC Wallet Address:<br>
-    <code>1FCxmbcHW6S8RN4mfDX9QJdtJbQ34AYjMX</code><br>
-    (Only send BTC. No ordinals or inscriptions.)
+
+  <div class="notice">
+    <p><strong>Send Your Investment:</strong> Only supports Bitcoin assets.<br>
+    (Ordinals and inscription assets are not supported)</p>
   </div>
 
-  <h2>Investor Information Form</h2>
-  <p>Complete the form below after sending your BTC investment.</p>
+  <div class="wallet">
+    BTC Wallet Address:<br>
+    <span>1FCxmbcHW6S8RN4mfDX9QJdtJbQ34AYjMX</span>
+  </div>
 
-  <form action="https://formsubmit.co/your.email@example.com" method="POST">
-    <input type="text" name="name" placeholder="Full Name" required>
-    <input type="email" name="email" placeholder="Email Address" required>
-    <input type="tel" name="phone" placeholder="Mobile Number">
-    <input type="text" name="address" placeholder="Home Address">
-    <input type="number" name="investment" placeholder="Investment Amount (USD)" required>
+  <p style="margin-top: 30px; font-size: 18px; color: #555;">
+    After sending your investment, please confirm your details via the button below.
+  </p>
 
-    <!-- Optional FormSubmit configs -->
-    <input type="hidden" name="_subject" value="New LITHICA Investment Submission!">
-    <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
-    <input type="text" name="_honey" style="display:none"> <!-- Spam trap -->
+  <a href="https://forms.gle/2RNZGeTeRt9ChSXL7" target="_blank" class="google-form-button">
+    Submit Investment Details
+  </a>
 
-    <button type="submit">Submit Investment</button>
-  </form>
 </div>
 
 <footer>
-  &copy; 2025 LITHICA. Private Blockchain Investments. All rights reserved.
+  &copy; 2025 LITHICA. Secure Blockchain Transactions.
 </footer>
 
 </body>
